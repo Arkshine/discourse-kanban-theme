@@ -13,6 +13,11 @@ default_view:
   default: ""
   description:
     en: A list of categories where the "Board" is the default view. Does not yet support the top level default view.
+default_view_fallback:
+  type: "bool"
+  default: false
+  description:
+    en: Whether to display the "Board" by default when a category is not specified in `default_view`.
 require_confirmation:
   default: true
   description:

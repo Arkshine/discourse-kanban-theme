@@ -15,6 +15,14 @@ const displayConnector = (categorySlug) => {
 };
 
 const boardDefaultView = (categorySlug) => {
+  if (
+    settings.default_view_fallback &&
+    settings.default_view === "" &&
+    displayConnector(categorySlug)
+  ) {
+    return true;
+  }
+
   return categorySetting("default_view", categorySlug, false);
 };
 
