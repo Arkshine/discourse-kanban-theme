@@ -15,7 +15,7 @@ import { tracked } from "@glimmer/tracking";
 
 export default class KanbanOptionsController extends Component {
   <template>
-    <DModal
+    <DModal 
       class="kanban-modal"
       @title={{i18n (themePrefix "modal.title")}}
       @closeModal={{@closeModal}}
