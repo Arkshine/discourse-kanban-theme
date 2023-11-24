@@ -180,7 +180,7 @@ export default class KanbanList extends Component {
     let requireConfirmation = settings.require_confirmation;
     let confirmationMessage = "";
 
-    if (this.kanbanManager.mode === "tags") {
+    if (this.kanbanManager.model === "tags") {
       const toAdd = addedElements(
         oldDefinition.params.tags,
         thisDefinition.params.tags
