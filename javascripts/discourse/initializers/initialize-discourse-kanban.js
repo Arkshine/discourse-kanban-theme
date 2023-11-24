@@ -53,6 +53,8 @@ export default {
         api.modifyClass(`route:discovery.${route}`, {
           pluginId: PLUGIN_ID,
 
+          router: service(),
+
           redirect(model, transition) {
             if (routeToBoard(transition, model.category.slug)) {
               // This redirect breaks the `new-topic` system, so we have to re-implement here
@@ -66,17 +68,17 @@ export default {
                   params.tags,
                 ];
               }
-              return this.transitionTo(
-                "discovery.latestCategory",
-                model.category.id,
-                { queryParams: { board: "default" } }
-              ).finally(() => {
-                if (newTopicParams) {
-                  next(() =>
-                    this.send("createNewTopicViaParams", ...newTopicParams)
-                  );
-                }
-              });
+              return this.router
+                .transitionTo("discovery.latestCategory", model.category.id, {
+                  queryParams: { board: "default" },
+                })
+                .finally(() => {
+                  if (newTopicParams) {
+                    next(() =>
+                      this.send("createNewTopicViaParams", ...newTopicParams)
+                    );
+                  }
+                });
             } else {
               return this._super(...arguments);
             }
