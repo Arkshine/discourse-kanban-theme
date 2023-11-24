@@ -8,6 +8,10 @@ default_modes:
   default: ""
   description:
     en: "Override the default board mode for each category. Use the syntax `category:mode:params`. For example, `support:assigned:david,sam,joffrey`. Use @ to denote the top level view. Use @untagged to display an untagged column."
+default_mode_fallback:
+  default: ""
+  description:
+    en: "The default board mode to use when a category is not specified in `default_modes`. Use the syntax `mode:params`."
 default_view:
   type: list
   default: ""

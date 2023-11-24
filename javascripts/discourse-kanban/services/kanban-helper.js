@@ -217,9 +217,14 @@ export default Service.extend({
 
     const lookup = this.get("discoveryCategory.slug") || "@";
     const defaultMode = setDefaults.find((m) => m[0] === lookup);
-    if (defaultMode && descriptor === "default") {
-      defaultMode.shift();
-      descriptor = defaultMode.join(":");
+
+    if (descriptor === "default") {
+      if (defaultMode) {
+        defaultMode.shift();
+        descriptor = defaultMode.join(":");
+      } else if (settings.default_mode_fallback !== "") {
+        descriptor = settings.default_mode_fallback;
+      }
     }
 
     if (descriptor === "default") {
