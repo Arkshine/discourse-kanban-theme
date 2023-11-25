@@ -4,10 +4,6 @@ const categorySetting = (type, slug, allowTopRoutes = true) => {
   }
   let categories = settings[type].split("|");
 
-  if (type === "default_modes") {
-    categories = categories.map((category) => category.split(":")[0]);
-  }
-
   const lookup = slug || "@";
   return categories.includes(lookup);
 };
@@ -20,13 +16,11 @@ const displayConnector = (categorySlug) => {
 };
 
 const boardDefaultView = (categorySlug) => {
-  if (
-    settings.default_view_fallback &&
-    settings.default_view === "" &&
-    (settings.default_mode_fallback !== "" ||
-      categorySetting("default_modes", categorySlug, false))
-  ) {
-    return true;
+  if (settings.default_view === "#all") {
+    return (
+      settings.default_view_exclude === "" ||
+      !categorySetting("default_view_exclude", categorySlug, false)
+    );
   }
 
   return categorySetting("default_view", categorySlug, false);
