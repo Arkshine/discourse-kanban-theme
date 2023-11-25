@@ -10,10 +10,10 @@ import { next } from "@ember/runloop";
 import DiscourseKanban from "../components/kanban/wrapper";
 import DiscourseKanbanNav from "../components/kanban/nav";
 
-const PLUGIN_ID = "kanban-board";
+const PLUGIN_ID = "kanban-board-drew";
 
 export default {
-  name: "my-initializer",
+  name: PLUGIN_ID,
   initialize() {
     withPluginApi("0.8.7", (api) => {
       api.renderInOutlet("discovery-list-container-top", DiscourseKanban);
