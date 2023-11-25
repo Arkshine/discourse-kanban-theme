@@ -1,7 +1,7 @@
 {
   "name": "discourse-kanban-theme",
   "version": "1.0.0",
-  "repository": "https://github.com/discourse/discourse-kanban-theme",
+  "repository": "https://github.com/Arkshine/discourse-kanban-theme",
   "author": "Discourse",
   "license": "MIT",
   "devDependencies": {

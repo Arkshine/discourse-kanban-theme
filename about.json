@@ -1,9 +1,9 @@
 {
-  "name": "Discourse Kanban",
+  "name": "Discourse Kanban (Drew)",
   "component": true,
   "license_url": null,
   "about_url": null,
-  "authors": "David Taylor",
+  "authors": "Discourse (modified by Arkshine)",
   "theme_version": "1.0",
   "minimum_discourse_version": null,
   "maximum_discourse_version": null,
