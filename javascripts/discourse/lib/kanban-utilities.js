@@ -2,7 +2,12 @@ const categorySetting = (type, slug, allowTopRoutes = true) => {
   if (!slug && !allowTopRoutes) {
     return false;
   }
-  const categories = settings[type].split("|");
+  let categories = settings[type].split("|");
+
+  if (type === "default_modes") {
+    categories = categories.map((category) => category.split(":")[0]);
+  }
+
   const lookup = slug || "@";
   return categories.includes(lookup);
 };
@@ -18,7 +23,8 @@ const boardDefaultView = (categorySlug) => {
   if (
     settings.default_view_fallback &&
     settings.default_view === "" &&
-    displayConnector(categorySlug)
+    (settings.default_mode_fallback !== "" ||
+      categorySetting("default_modes", categorySlug, false))
   ) {
     return true;
   }

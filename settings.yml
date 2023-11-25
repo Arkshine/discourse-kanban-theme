@@ -11,7 +11,7 @@ default_modes:
 default_mode_fallback:
   default: ""
   description:
-    en: "The default board mode to use when a category is not specified in `default_modes`. Use the syntax `mode:params`."
+    en: "The default board mode to use when a category is not found in `default_modes`. Use the syntax `mode:params`."
 default_view:
   type: list
   default: ""
@@ -21,7 +21,7 @@ default_view_fallback:
   type: "bool"
   default: false
   description:
-    en: Whether to display the "Board" by default when a category is not specified in `default_view`.
+    en: Display the "Board" by default on 'default_modes' or 'default_mode_fallback', if no category is found in 'default_view'.
 require_confirmation:
   default: true
   description:
