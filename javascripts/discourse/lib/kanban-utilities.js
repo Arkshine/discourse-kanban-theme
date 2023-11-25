@@ -16,7 +16,7 @@ const displayConnector = (categorySlug) => {
 };
 
 const boardDefaultView = (categorySlug) => {
-  if (settings.default_view === "#all") {
+  if (settings.default_view === "@all") {
     return (
       settings.default_view_exclude === "" ||
       !categorySetting("default_view_exclude", categorySlug, false)

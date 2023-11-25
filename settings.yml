@@ -16,12 +16,12 @@ default_view:
   type: list
   default: ""
   description:
-    en: A list of categories where the "Board" is the default view. Does not yet support the top level default view. Use `#all` to include all the categories.
+    en: A list of categories where the "Board" is the default view. Does not yet support the top level default view. Use `@all` to include all the categories.
 default_view_exclude:
   type: "list"
   default: ""
   description:
-    en: Exclude categories from the default view. This is useful if you have a default view of all categories (`#all`), but want to exclude one or two.
+    en: Exclude categories from the default view. This is useful if you have a default view of all categories (`@all`), but want to exclude one or two.
 require_confirmation:
   default: true
   description:
